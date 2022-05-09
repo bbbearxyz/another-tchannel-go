@@ -220,7 +220,7 @@ func getServiceMethod(method string) (string, string, bool) {
 // Handle handles an incoming TChannel call and forwards it to the correct handler.
 func (s *Server) Handle(ctx context.Context, call *tchannel.InboundCall) {
 	op := call.MethodString()
-	println(op, "come to response")
+
 	service, method, ok := getServiceMethod(op)
 	if !ok {
 		log.Fatalf("Handle got call for %s which does not match the expected call format", op)

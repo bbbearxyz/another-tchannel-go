@@ -145,9 +145,7 @@ func (c *client) Call(ctx Context, pbService, methodName string, req, resp PbStr
 		if err := writeArgs(call, headers, req); err != nil {
 			return err
 		}
-		println("write arg")
 		respHeaders, isOK, err = readResponse(call.Response(), resp)
-		println("read arg")
 		return err
 	})
 	if err != nil {
